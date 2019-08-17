@@ -24,11 +24,12 @@ function doSearch() {
 	});
 
 	statusDisplay.innerHTML = "A web worker is on the job (" + fromNumber + " to " + toNumber + ")...";    
+}
 
 function receivedWorkderMessage(event) {
 	var message = event.data;
 	if(message.messageType == "PrimeList") {
-		var prime = message.data;
+		var primes = message.data;
 
 		// Take the results, loop over it,
 		// and paste it into one long piece of text.
